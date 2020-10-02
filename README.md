@@ -1,4 +1,14 @@
-# nbdev template
+# Jupyter Blog 
+> Summary description here.
 
-Use this template to more easily create your nbdev project.
+
+```python
+1+1
+```
+
+
+
+
+    2
+
 
