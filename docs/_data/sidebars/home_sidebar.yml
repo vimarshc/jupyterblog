@@ -7,24 +7,25 @@ entries:
 - folders:
   - folderitems:
     - output: web,pdf
-      title: Overview
+      title: About Me
       url: /
-    - output: web,pdf
-      title: core
-      url: core.html
-    - output: web,pdf
-      title: align_and_translate
-      url: attention.align_and_translate.html
-    - output: web,pdf
-      title: attention
-      url: attention.attention.html
-    - output: web,pdf
-      title: show_attend_and_tell
-      url: attention.show_attend_tell.html
-    - output: web,pdf
-      title: divide_and_conquer
-      url: divide_and_conquer.html
     output: web
-    title: jupyterblog
+    title: Jupyter Blog
+  - folderitems:
+    - output: web,pdf
+      title: Post
+      url: /attention.attention
+      subfolders:
+      - output: web
+        subfolderitems:
+        - output: web,pdf
+          title: Align and Translate
+          url: attention.align_and_translate.html
+        - output: web,pdf
+          title: Show, Attend and Tell
+          url: attention.show_attend_tell.html
+        title: Reference Papers
+    output: web
+    title: Attention
   output: web
   title: Sidebar
