@@ -1,6 +1,6 @@
 ---
 
-title: Title
+title: attention #
 
 
 keywords: fastai
@@ -29,13 +29,6 @@ nb_path: "attention.ipynb"
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Introduction">Introduction<a class="anchor-link" href="#Introduction"> </a></h3><p>I this blog post I wanna to introduce anttention. So, I'm gonna deviate from what I've seen as the usual introduction to anttention. I think it's important to see things in historical context. I'm gonna try and explain the paper which introduced anttention, the context in which it was introduced. Further, where most tutorials focus on the vector representation of the anttention mechanism I'm gonna show in the fewest possible lines of code the core of the anttention mechanism.</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Neural-Machine-Translation-by-Jointly-Learning-to-Align-and-Translate">Neural Machine Translation by Jointly Learning to Align and Translate<a class="anchor-link" href="#Neural-Machine-Translation-by-Jointly-Learning-to-Align-and-Translate"> </a></h4><p>This paper introduces anttention in the context of sequence-to-sequence modelling. The paper describes the status of NMT models and the problem the authors are trying to solve with anttention:</p>
@@ -181,7 +174,8 @@ nb_path: "attention.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Shape: (batch_size,decoder_hidden_dimension)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># In the first step, this is gonna be the &lt;start&gt; token</span>
+<span class="c1"># Shape: (batch_size,decoder_hidden_dimension)</span>
 <span class="c1"># batch_size: Num of sequences we&#39;re processing</span>
 <span class="c1"># decoder_hidden_dimension: hidden state dimension of the decoder RNN</span>
 <span class="n">hidden</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">512</span><span class="p">)</span>
@@ -208,7 +202,8 @@ nb_path: "attention.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># the anttention class. I&#39;m going to be printing the dimensions/ values of vaiables to keep track of what&#39;s</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This is what the actual processing is gonna look like. I have taken this code from the `forward` method of </span>
+<span class="c1"># the anttention class. I&#39;m going to be printing the dimensions/ values of vaiables to keep track of what&#39;s</span>
 <span class="c1"># happening</span>
 </pre></div>
 
