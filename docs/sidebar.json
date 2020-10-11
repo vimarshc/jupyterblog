@@ -1,6 +1,7 @@
 {
     "Jupyter Blog": {
-        "About Me": "/"
+        "About Me": "/",
+        "CV": "/jupyterblog/assets/VimarshChaturvedi_CV.pdf"
     },
     "Attention": {
         "Post": "/attention.attention",
@@ -12,3 +13,17 @@
         }
     }
 }
+// {
+//   "jupyterblog": {
+//     "Overview": "/",
+//     "Attention":{
+//     	"Attention Post": "attention.attention.html",
+//     	"":{
+//     		"Reference Papers":{
+//     			"Align and Translate": "attention.align_and_translate.html",
+//     			"Show, Attend and Tell": "attention.show_attend_tell.html"
+//     		}
+//     	}
+//     }   
+//    }
+// }
