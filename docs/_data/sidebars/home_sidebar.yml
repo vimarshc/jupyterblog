@@ -14,16 +14,16 @@ entries:
       url: core.html
     - output: web,pdf
       title: align_and_translate
-      url: align_and_translate.html
+      url: attention.align_and_translate.html
     - output: web,pdf
       title: attention
-      url: attention.html
+      url: attention.attention.html
+    - output: web,pdf
+      title: show_attend_and_tell
+      url: attention.show_attend_tell.html
     - output: web,pdf
       title: divide_and_conquer
       url: divide_and_conquer.html
-    - output: web,pdf
-      title: show_attend_and_tell
-      url: show_attend_tell.html
     output: web
     title: jupyterblog
   output: web

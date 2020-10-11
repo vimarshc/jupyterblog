@@ -1,10 +1,14 @@
 {
   "jupyterblog": {
     "Overview": "/",
-    "core": "core.html",
-    "align_and_translate": "align_and_translate.html",
-    "attention": "attention.html",
-    "divide_and_conquer": "divide_and_conquer.html",
-    "show_attend_and_tell": "show_attend_tell.html"
-  }
+    "Attention":{
+    	"Attention Post": "attention.attention.html",
+    	"":{
+    		"Reference Papers":{
+    			"Align and Translate": "attention.align_and_translate.html",
+    			"Show, Attend and Tell": "attention.show_attend_tell.html",
+    		}
+    	}
+    },   
+   }
 }
