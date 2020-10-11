@@ -315,6 +315,17 @@ torch.Size([1, 5, 1024])
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Referencing the paper, the following three operations are represented by the following operation in the paper:</p>
+<p>{% raw %}
+$$e_{ij} = a(s_{i-1},h_i)$$
+{% endraw %}</p>
+<p>In the expression, we're calculating a score for each encoder output.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -454,6 +465,16 @@ torch.Size([1, 5, 1536])
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the paper the softmax in the following cell is represented as:</p>
+<p>{% raw %}
+$$\alpha_{ij} = \frac{exp(e_{ij})}{\sum_{k=1}^{T_x }exp(e_{ik})}$$
+{% endraw %}</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -652,6 +673,16 @@ torch.Size([1, 5, 1536])
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the paper, the weighted vector is referred to as the context vector and calculated as the follows:</p>
+<p>{% raw %}
+$$c_i = \sum_{j=1}^{T_x }\alpha_{ij}h_j$$
+{% endraw %}</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -703,7 +734,7 @@ torch.Size([1, 5, 1536])
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here I have tried to cover the very core of the attention mechanism. Before moving forward I would highly reccomend to go through the entire implementaton here. I have added several debuggers (pdb) in the Encoder, Decoder, Attention and the final model.</p>
-<p>To summarise what attention does, given the input of a list of vectors and another vector, attention gives a weightage which signifies the dependence of the vector on each vector in the list of vectors.</p>
+<p>To summarise: given the input of a list of vectors <code>L</code> and a vector <code>x</code>, attention gives a weightage which signifies the dependence of the vector <code>x</code> on each entity in the list <code>L</code>.</p>
 
 </div>
 </div>
