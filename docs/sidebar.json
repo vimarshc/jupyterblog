@@ -1,6 +1,8 @@
 {
   "jupyterblog": {
     "Overview": "/",
-    "core": "core.html"
+    "core": "core.html",
+    "3 - Neural Machine Translation by Jointly Learning to Align and Translate": "align_and_translate.html",
+    "Title": "show_attend_tell.html"
   }
 }

@@ -12,6 +12,12 @@ entries:
     - output: web,pdf
       title: core
       url: core.html
+    - output: web,pdf
+      title: 3 - Neural Machine Translation by Jointly Learning to Align and Translate
+      url: align_and_translate.html
+    - output: web,pdf
+      title: Title
+      url: show_attend_tell.html
     output: web
     title: jupyterblog
   output: web
