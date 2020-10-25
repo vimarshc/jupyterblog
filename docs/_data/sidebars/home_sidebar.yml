@@ -12,6 +12,9 @@ entries:
     - output: web,pdf
       title: CV
       url: /assets/VimarshChaturvedi_CV.pdf
+    - output: web,pdf
+      title: Few Experiments
+      url: github.com/vimarshc/fastai_experiments/
     output: web
     title: Jupyter Blog
   - folderitems:
