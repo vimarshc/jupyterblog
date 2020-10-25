@@ -1,7 +1,8 @@
 {
     "Jupyter Blog": {
         "About Me": "/",
-        "CV": "/assets/VimarshChaturvedi_CV.pdf"
+        "CV": "/assets/VimarshChaturvedi_CV.pdf",
+	"Few Experiments": "github.com/vimarshc/fastai_experiments/"
     },
     "Attention": {
         "Post": "/attention.attention",
