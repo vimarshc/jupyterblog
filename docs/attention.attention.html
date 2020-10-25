@@ -13098,14 +13098,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Neural-Machine-Translation-by-Jointly-Learning-to-Align-and-Translate">Neural Machine Translation by Jointly Learning to Align and Translate<a class="anchor-link" href="#Neural-Machine-Translation-by-Jointly-Learning-to-Align-and-Translate">&#182;</a></h4>
+<h4 id="Neural-Machine-Translation-by-Jointly-Learning-to-Align-and-Translate"><a href="https://arxiv.org/abs/1409.0473">Neural Machine Translation by Jointly Learning to Align and Translate</a><a class="anchor-link" href="#Neural-Machine-Translation-by-Jointly-Learning-to-Align-and-Translate">&#182;</a></h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The paper introduces a novel mechanism to bring about improvements to the task of sequence to sequence modelling. I think it's worth taking a minute to really drill down on the setup, the problem and then delve into how anttention is gonna solve that problem.</p>
+<p>The paper introduces a novel mechanism to bring about improvements to the task of sequence to sequence modelling. I think it's worth taking a minute to really drill down on the setup, the problem and then delve into how anttention is gonna solve that problem. The complete implementation of the paper is available <a href="https://github.com/vimarshc/jupyterblog/blob/master/attention.align_and_translate.ipynb">here</a>. Since I want to focus on attention I'm gonna be using a subset of the code here.</p>
 
 </div>
 </div>
@@ -13121,7 +13121,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If you're not aware of how an RNN functions you need to stop here understand that first. A RNN processes a sequence with a time delay. After processing each new token in the input it creates a hidden state which is a vector representation of the sequence till the last input.</p>
+<p>If you're not aware of how an RNN functions you need to stop here understand that first. A RNN processes a sequence with a time delay. After processing each new token in the input it creates a hidden state which is a vector representation of the sequence till the last input. I think Andrej Karpathy's <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">blogpost</a> is a brilliant place to understand RNNs from the ground up.</p>
 <p>So, from the diagram <code>h3</code> represents the sequence till <code>morgen</code>.</p>
 <p>The seq-to-seq setup is usually used for translation between languages. So, the last hidden state which represents the entire sequence becomes the initial hidden state for another RNN that is going to be responsible for outputting the translated sequence.</p>
 <p>This is the basic setup for a seq-to-seq model. Now, let's take a look at the paper describing the problem with this steup.</p>
@@ -13157,7 +13157,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Enter:-Anttention">Enter: Anttention<a class="anchor-link" href="#Enter:-Anttention">&#182;</a></h4><p>When we're using anttention, the first input that the decoder recieves is not the last hidden state of the encoder RNN but the <start> token for the translation. Using this token I want to extract information from the given hidden states of the encoder. Given the <stat> token we know we want information for the initial set of hidden states. It might be the first few hidden states even.</p>
+<h4 id="Enter:-Anttention">Enter: Anttention<a class="anchor-link" href="#Enter:-Anttention">&#182;</a></h4><p>When we're using anttention, the first input that the decoder recieves is not the last hidden state of the encoder RNN but the <code>&lt; start &gt;</code> token for the translation. Using this token I want to extract information from the given hidden states of the encoder. Given the <stat> token we know we want information for the initial set of hidden states. It might be the first few hidden states even.</p>
 <p>Here, I would say we're ready to look at how the anttention mechanism functions as we have descibed in plenty detail the two inputs anttention requires:</p>
 <ol>
 <li>A list of vectors from which I want to extract some information. </li>
@@ -13179,32 +13179,6 @@ div#notebook {
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-e18a6d1d8fde&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">import</span> torch
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-green-fg">import</span> torch<span class="ansi-blue-fg">.</span>nn <span class="ansi-green-fg">as</span> nn
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">import</span> torch<span class="ansi-blue-fg">.</span>optim <span class="ansi-green-fg">as</span> optim
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">import</span> torch<span class="ansi-blue-fg">.</span>nn<span class="ansi-blue-fg">.</span>functional <span class="ansi-green-fg">as</span> F
-
-<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;torch&#39;</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -13240,7 +13214,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here I'm going to create an artifical torch vectors to step through the mechanism. I would encourage you to go through the complete implementation of the paper once you're done here. I am attaching a notebook which as the complete implementation.</p>
+<p>Here I'm going to create an artifical torch vectors to step through the mechanism. I would encourage you to go through the complete implementation of the paper once you're done here. I am attaching a notebook which as the complete implementation. (Here onwards follow along the comments as I'm explaning what's hapening in the comments)</p>
 
 </div>
 </div>
