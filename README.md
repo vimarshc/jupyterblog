@@ -2,6 +2,8 @@
 
 
 
+The idea of this blog came from the fact that I wanted to write blog posts in Jupyter Notebooks. I found that it perfectly encapsulated the blend of code and description that I wanted to achieve. I wanted to be able to write things. I'm used the wonderful nbdev module where I can write blog posts in Jupyter Notebooks and it gets automatically converted into a webiste. 
+
 My long term research goal revolves around creating robust representations for extremly large text.  At a more granular level my research interest include boundry detection and concept identification in text, recurrence in Transformers and modular methods like RRNs.
 
 I spent a summer volunteering with as a Math and English teacher with Don Bosco School. 

@@ -11,7 +11,7 @@ entries:
       url: /
     - output: web,pdf
       title: CV
-      url: /jupyterblog/assets/VimarshChaturvedi_CV.pdf
+      url: /assets/VimarshChaturvedi_CV.pdf
     output: web
     title: Jupyter Blog
   - folderitems:
