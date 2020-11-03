@@ -20,7 +20,7 @@ entries:
       url: important_deep_learning_resources.html
     - output: web,pdf
       title: Other Fun Things
-      url: ''
+      url: other_fun_things.html
     output: web
     title: Jupyter Blog
   - folderitems:
