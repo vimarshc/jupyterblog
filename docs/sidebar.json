@@ -2,7 +2,9 @@
     "Jupyter Blog": {
         "About Me": "/",
         "CV": "/assets/VimarshChaturvedi_CV.pdf",
-	"Few Experiments": "github.com/vimarshc/fastai_experiments/"
+	"Few Experiments": "github.com/vimarshc/fastai_experiments/",
+    "Important Deep Learning Resources": "important_deep_learning_resources.html",
+     "Other Fun Things": "other_fun_things.html"
     },
     "Attention": {
         "Post": "/attention.attention",

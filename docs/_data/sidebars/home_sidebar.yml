@@ -15,6 +15,12 @@ entries:
     - output: web,pdf
       title: Few Experiments
       url: github.com/vimarshc/fastai_experiments/
+    - output: web,pdf
+      title: Important Deep Learning Resources
+      url: important_deep_learning_resources.html
+    - output: web,pdf
+      title: Other Fun Things
+      url: ''
     output: web
     title: Jupyter Blog
   - folderitems:
