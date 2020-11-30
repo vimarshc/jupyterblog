@@ -75,7 +75,7 @@ nb_path: "attention.show_attend_tell.ipynb"
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">decoder</span> <span class="o">=</span> <span class="n">decoder</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 <span class="n">encoder</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-
+<span class="o">.</span><span class="n">data</span><span class="o">/</span>
 <span class="c1"># Loss function</span>
 <span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 
@@ -91,6 +91,24 @@ nb_path: "attention.show_attend_tell.ipynb"
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-26-ff9fb26f9230&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">4</span>
+<span class="ansi-red-fg">    .data/</span>
+    ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -118,6 +136,28 @@ nb_path: "attention.show_attend_tell.ipynb"
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Downloading: &#34;https://download.pytorch.org/models/resnet101-5d3b4d8f.pth&#34; to /home/vimarshc/.cache/torch/hub/checkpoints/resnet101-5d3b4d8f.pth
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -151,11 +191,11 @@ nb_path: "attention.show_attend_tell.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">create_input_files</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="s1">&#39;flickr8k&#39;</span><span class="p">,</span>
-                   <span class="n">karpathy_json_path</span><span class="o">=</span><span class="s1">&#39;dataset_flickr8k.json&#39;</span><span class="p">,</span>
-                   <span class="n">image_folder</span><span class="o">=</span><span class="s1">&#39;/home/vimarshc/Documents/jupyterblog/flickr_data/Flickr_Data/Images/&#39;</span><span class="p">,</span>
+                   <span class="n">karpathy_json_path</span><span class="o">=</span><span class="s1">&#39;.data/dataset_flickr8k.json&#39;</span><span class="p">,</span>
+                   <span class="n">image_folder</span><span class="o">=</span><span class="s1">&#39;/home/vimarshc/Documents/jupyterblog/.data/flickr_data/Flickr_Data/Images/&#39;</span><span class="p">,</span>
                    <span class="n">captions_per_image</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
                    <span class="n">min_word_freq</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-                   <span class="n">output_folder</span><span class="o">=</span><span class="s1">&#39;flickr8k_op&#39;</span><span class="p">,</span>
+                   <span class="n">output_folder</span><span class="o">=</span><span class="s1">&#39;.data/flickr8k_op_ii&#39;</span><span class="p">,</span>
                    <span class="n">max_len</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 
@@ -169,7 +209,7 @@ nb_path: "attention.show_attend_tell.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>  0%|          | 4/6000 [00:00&lt;02:43, 36.75it/s]</pre>
+<pre>  0%|          | 3/6000 [00:00&lt;03:30, 28.50it/s]</pre>
 </div>
 </div>
 
@@ -186,8 +226,8 @@ Reading TRAIN images and captions, storing to file...
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 6000/6000 [03:05&lt;00:00, 32.37it/s]
-  0%|          | 4/1000 [00:00&lt;00:29, 34.23it/s]</pre>
+<pre>100%|██████████| 6000/6000 [01:55&lt;00:00, 52.05it/s]
+  0%|          | 5/1000 [00:00&lt;00:21, 46.43it/s]</pre>
 </div>
 </div>
 
@@ -204,8 +244,8 @@ Reading VAL images and captions, storing to file...
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 1000/1000 [00:28&lt;00:00, 34.50it/s]
-  0%|          | 4/1000 [00:00&lt;00:27, 36.48it/s]</pre>
+<pre>100%|██████████| 1000/1000 [00:20&lt;00:00, 49.57it/s]
+  1%|          | 6/1000 [00:00&lt;00:19, 50.50it/s]</pre>
 </div>
 </div>
 
@@ -222,7 +262,7 @@ Reading TEST images and captions, storing to file...
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 1000/1000 [00:27&lt;00:00, 36.94it/s]
+<pre>100%|██████████| 1000/1000 [00:20&lt;00:00, 48.20it/s]
 </pre>
 </div>
 </div>
@@ -637,6 +677,47 @@ Reading TEST images and captions, storing to file...
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ls</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>00_core.ipynb                          important_deep_learning_resources.ipynb
+<span class="ansi-blue-intense-fg ansi-bold">assets</span>/                                index.ipynb
+attention.align_and_translate.ipynb    <span class="ansi-blue-intense-fg ansi-bold">jupyterblog</span>/
+attention.annotated_transformer.ipynb  LICENSE
+attention.attention.ipynb              Makefile
+attention.show_attend_tell.ipynb       MANIFEST.in
+CONTRIBUTING.md                        other_fun_things.ipynb
+divide_and_conquer.ipynb               README.md
+docker-compose.yml                     scratch.ipynb
+<span class="ansi-blue-intense-fg ansi-bold">docs</span>/                                  settings.ini
+filesystem.ipynb                       setup.py
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">torch.backends.cudnn</span> <span class="k">as</span> <span class="nn">cudnn</span>
 <span class="kn">import</span> <span class="nn">torch.optim</span>
@@ -647,7 +728,7 @@ Reading TEST images and captions, storing to file...
 <span class="kn">from</span> <span class="nn">nltk.translate.bleu_score</span> <span class="kn">import</span> <span class="n">corpus_bleu</span>
 
 <span class="c1"># Data parameters</span>
-<span class="n">data_folder</span> <span class="o">=</span> <span class="s1">&#39;flickr8k_op&#39;</span>  <span class="c1"># folder with data files saved by create_input_files.py</span>
+<span class="n">data_folder</span> <span class="o">=</span> <span class="s1">&#39;.data/flickr8k_op&#39;</span>  <span class="c1"># folder with data files saved by create_input_files.py</span>
 <span class="n">data_name</span> <span class="o">=</span> <span class="s1">&#39;flickr8k_5_cap_per_img_5_min_word_freq&#39;</span>  <span class="c1"># base name shared by data files</span>
 
 <span class="c1"># Model parameters</span>
@@ -675,6 +756,21 @@ Reading TEST images and captions, storing to file...
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/vimarshc/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+  return torch._C._cuda_getDeviceCount() &gt; 0
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -776,6 +872,23 @@ Reading TEST images and captions, storing to file...
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>&lt;&gt;:53: SyntaxWarning: &#34;is&#34; with a literal. Did you mean &#34;==&#34;?
+&lt;&gt;:53: SyntaxWarning: &#34;is&#34; with a literal. Did you mean &#34;==&#34;?
+&lt;ipython-input-14-48b5327a0544&gt;:53: SyntaxWarning: &#34;is&#34; with a literal. Did you mean &#34;==&#34;?
+  if self.split is &#39;TRAIN&#39;:
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -1063,31 +1176,59 @@ Reading TEST images and captions, storing to file...
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&gt; <span class="ansi-green-fg">&lt;ipython-input-7-3cbbf1757317&gt;</span>(27)<span class="ansi-cyan-fg">train</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">     25 </span><span class="ansi-red-fg">        </span><span class="ansi-green-fg">import</span> pdb<span class="ansi-blue-fg">;</span>pdb<span class="ansi-blue-fg">.</span>set_trace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">     26 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># Move to GPU, if available</span>
-<span class="ansi-green-fg">---&gt; 27 </span><span class="ansi-red-fg">        </span>imgs <span class="ansi-blue-fg">=</span> imgs<span class="ansi-blue-fg">.</span>to<span class="ansi-blue-fg">(</span>device<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">     28 </span><span class="ansi-red-fg">        </span>caps <span class="ansi-blue-fg">=</span> caps<span class="ansi-blue-fg">.</span>to<span class="ansi-blue-fg">(</span>device<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">     29 </span><span class="ansi-red-fg">        </span>caplens <span class="ansi-blue-fg">=</span> caplens<span class="ansi-blue-fg">.</span>to<span class="ansi-blue-fg">(</span>device<span class="ansi-blue-fg">)</span>
-
-ipdb&gt; c
-&gt; <span class="ansi-green-fg">&lt;ipython-input-2-e4369de1a3d5&gt;</span>(28)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
+<pre>&gt; <span class="ansi-green-fg">&lt;ipython-input-15-e4369de1a3d5&gt;</span>(28)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-fg">     26 </span><span class="ansi-red-fg">        &#34;&#34;&#34;
 </span><span class="ansi-green-fg">     27 </span><span class="ansi-red-fg">        </span><span class="ansi-green-fg">import</span> pdb<span class="ansi-blue-fg">;</span>pdb<span class="ansi-blue-fg">.</span>set_trace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">---&gt; 28 </span><span class="ansi-red-fg">        </span>out <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>resnet<span class="ansi-blue-fg">(</span>images<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, 2048, image_size/32, image_size/32)</span>
 <span class="ansi-green-fg">     29 </span><span class="ansi-red-fg">        </span>out <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>adaptive_pool<span class="ansi-blue-fg">(</span>out<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, 2048, encoded_image_size, encoded_image_size)</span>
 <span class="ansi-green-fg">     30 </span><span class="ansi-red-fg">        </span>out <span class="ansi-blue-fg">=</span> out<span class="ansi-blue-fg">.</span>permute<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, encoded_image_size, encoded_image_size, 2048)</span>
 
+ipdb&gt; n
+&gt; <span class="ansi-green-fg">&lt;ipython-input-15-e4369de1a3d5&gt;</span>(29)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">     27 </span><span class="ansi-red-fg">        </span><span class="ansi-green-fg">import</span> pdb<span class="ansi-blue-fg">;</span>pdb<span class="ansi-blue-fg">.</span>set_trace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">     28 </span><span class="ansi-red-fg">        </span>out <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>resnet<span class="ansi-blue-fg">(</span>images<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, 2048, image_size/32, image_size/32)</span>
+<span class="ansi-green-fg">---&gt; 29 </span><span class="ansi-red-fg">        </span>out <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>adaptive_pool<span class="ansi-blue-fg">(</span>out<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, 2048, encoded_image_size, encoded_image_size)</span>
+<span class="ansi-green-fg">     30 </span><span class="ansi-red-fg">        </span>out <span class="ansi-blue-fg">=</span> out<span class="ansi-blue-fg">.</span>permute<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, encoded_image_size, encoded_image_size, 2048)</span>
+<span class="ansi-green-fg">     31 </span><span class="ansi-red-fg">        </span><span class="ansi-green-fg">return</span> out
+
+ipdb&gt; p out.shape
+torch.Size([4, 2048, 8, 8])
+ipdb&gt; p images.shape
+torch.Size([4, 3, 256, 256])
+ipdb&gt; p out.shape
+torch.Size([4, 2048, 8, 8])
+ipdb&gt; n
+&gt; <span class="ansi-green-fg">&lt;ipython-input-15-e4369de1a3d5&gt;</span>(30)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">     28 </span><span class="ansi-red-fg">        </span>out <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>resnet<span class="ansi-blue-fg">(</span>images<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, 2048, image_size/32, image_size/32)</span>
+<span class="ansi-green-fg">     29 </span><span class="ansi-red-fg">        </span>out <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>adaptive_pool<span class="ansi-blue-fg">(</span>out<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, 2048, encoded_image_size, encoded_image_size)</span>
+<span class="ansi-green-fg">---&gt; 30 </span><span class="ansi-red-fg">        </span>out <span class="ansi-blue-fg">=</span> out<span class="ansi-blue-fg">.</span>permute<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, encoded_image_size, encoded_image_size, 2048)</span>
+<span class="ansi-green-fg">     31 </span><span class="ansi-red-fg">        </span><span class="ansi-green-fg">return</span> out
+<span class="ansi-green-fg">     32 </span>
+
+ipdb&gt; p out.shape
+torch.Size([4, 2048, 14, 14])
+ipdb&gt; n
+&gt; <span class="ansi-green-fg">&lt;ipython-input-15-e4369de1a3d5&gt;</span>(31)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">     29 </span><span class="ansi-red-fg">        </span>out <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>adaptive_pool<span class="ansi-blue-fg">(</span>out<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, 2048, encoded_image_size, encoded_image_size)</span>
+<span class="ansi-green-fg">     30 </span><span class="ansi-red-fg">        </span>out <span class="ansi-blue-fg">=</span> out<span class="ansi-blue-fg">.</span>permute<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, encoded_image_size, encoded_image_size, 2048)</span>
+<span class="ansi-green-fg">---&gt; 31 </span><span class="ansi-red-fg">        </span><span class="ansi-green-fg">return</span> out
+<span class="ansi-green-fg">     32 </span>
+<span class="ansi-green-fg">     33 </span><span class="ansi-red-fg">    </span><span class="ansi-green-fg">def</span> fine_tune<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> fine_tune<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+
+ipdb&gt; p out.shape
+torch.Size([4, 14, 14, 2048])
 ipdb&gt; c
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(122)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
+&gt; <span class="ansi-green-fg">&lt;ipython-input-16-ffe59a3ddac7&gt;</span>(122)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-fg">    120 </span><span class="ansi-red-fg">        &#34;&#34;&#34;
 </span><span class="ansi-green-fg">    121 </span><span class="ansi-red-fg">        </span><span class="ansi-green-fg">import</span> pdb<span class="ansi-blue-fg">;</span>pdb<span class="ansi-blue-fg">.</span>set_trace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">--&gt; 122 </span><span class="ansi-red-fg">        </span>batch_size <span class="ansi-blue-fg">=</span> encoder_out<span class="ansi-blue-fg">.</span>size<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">    123 </span><span class="ansi-red-fg">        </span>encoder_dim <span class="ansi-blue-fg">=</span> encoder_out<span class="ansi-blue-fg">.</span>size<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">    124 </span><span class="ansi-red-fg">        </span>vocab_size <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>vocab_size
 
+ipdb&gt; p encoder_out.shape
+torch.Size([4, 14, 14, 2048])
 ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(123)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
+&gt; <span class="ansi-green-fg">&lt;ipython-input-16-ffe59a3ddac7&gt;</span>(123)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-fg">    121 </span><span class="ansi-red-fg">        </span><span class="ansi-green-fg">import</span> pdb<span class="ansi-blue-fg">;</span>pdb<span class="ansi-blue-fg">.</span>set_trace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">    122 </span><span class="ansi-red-fg">        </span>batch_size <span class="ansi-blue-fg">=</span> encoder_out<span class="ansi-blue-fg">.</span>size<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">--&gt; 123 </span><span class="ansi-red-fg">        </span>encoder_dim <span class="ansi-blue-fg">=</span> encoder_out<span class="ansi-blue-fg">.</span>size<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
@@ -1095,7 +1236,7 @@ ipdb&gt; n
 <span class="ansi-green-fg">    125 </span>
 
 ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(124)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
+&gt; <span class="ansi-green-fg">&lt;ipython-input-16-ffe59a3ddac7&gt;</span>(124)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-fg">    122 </span><span class="ansi-red-fg">        </span>batch_size <span class="ansi-blue-fg">=</span> encoder_out<span class="ansi-blue-fg">.</span>size<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">    123 </span><span class="ansi-red-fg">        </span>encoder_dim <span class="ansi-blue-fg">=</span> encoder_out<span class="ansi-blue-fg">.</span>size<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">--&gt; 124 </span><span class="ansi-red-fg">        </span>vocab_size <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>vocab_size
@@ -1103,15 +1244,17 @@ ipdb&gt; n
 <span class="ansi-green-fg">    126 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># Flatten image</span>
 
 ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(127)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
+&gt; <span class="ansi-green-fg">&lt;ipython-input-16-ffe59a3ddac7&gt;</span>(127)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-fg">    125 </span>
 <span class="ansi-green-fg">    126 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># Flatten image</span>
 <span class="ansi-green-fg">--&gt; 127 </span><span class="ansi-red-fg">        </span>encoder_out <span class="ansi-blue-fg">=</span> encoder_out<span class="ansi-blue-fg">.</span>view<span class="ansi-blue-fg">(</span>batch_size<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> encoder_dim<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, num_pixels, encoder_dim)</span>
 <span class="ansi-green-fg">    128 </span><span class="ansi-red-fg">        </span>num_pixels <span class="ansi-blue-fg">=</span> encoder_out<span class="ansi-blue-fg">.</span>size<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">    129 </span>
 
+ipdb&gt; p encoder_out.shape
+torch.Size([4, 14, 14, 2048])
 ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(128)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
+&gt; <span class="ansi-green-fg">&lt;ipython-input-16-ffe59a3ddac7&gt;</span>(128)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-fg">    126 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># Flatten image</span>
 <span class="ansi-green-fg">    127 </span><span class="ansi-red-fg">        </span>encoder_out <span class="ansi-blue-fg">=</span> encoder_out<span class="ansi-blue-fg">.</span>view<span class="ansi-blue-fg">(</span>batch_size<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> encoder_dim<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, num_pixels, encoder_dim)</span>
 <span class="ansi-green-fg">--&gt; 128 </span><span class="ansi-red-fg">        </span>num_pixels <span class="ansi-blue-fg">=</span> encoder_out<span class="ansi-blue-fg">.</span>size<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
@@ -1121,28 +1264,15 @@ ipdb&gt; n
 ipdb&gt; p encoder_out.shape
 torch.Size([4, 196, 2048])
 ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(131)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
+&gt; <span class="ansi-green-fg">&lt;ipython-input-16-ffe59a3ddac7&gt;</span>(131)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-fg">    129 </span>
 <span class="ansi-green-fg">    130 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># Sort input data by decreasing lengths; why? apparent below</span>
 <span class="ansi-green-fg">--&gt; 131 </span><span class="ansi-red-fg">        </span>caption_lengths<span class="ansi-blue-fg">,</span> sort_ind <span class="ansi-blue-fg">=</span> caption_lengths<span class="ansi-blue-fg">.</span>squeeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>sort<span class="ansi-blue-fg">(</span>dim<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> descending<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">    132 </span><span class="ansi-red-fg">        </span>encoder_out <span class="ansi-blue-fg">=</span> encoder_out<span class="ansi-blue-fg">[</span>sort_ind<span class="ansi-blue-fg">]</span>
 <span class="ansi-green-fg">    133 </span><span class="ansi-red-fg">        </span>encoded_captions <span class="ansi-blue-fg">=</span> encoded_captions<span class="ansi-blue-fg">[</span>sort_ind<span class="ansi-blue-fg">]</span>
 
-ipdb&gt; p num_pixels 
-196
-ipdb&gt; caption_lengths
-tensor([[ 7],
-        [11],
-        [ 9],
-        [16]])
-ipdb&gt; p caption_lengths.squeeze(1)
-tensor([ 7, 11,  9, 16])
-ipdb&gt; caption_lengths.squeeze(1).sort(dim=0, descending=True)
-torch.return_types.sort(
-values=tensor([16, 11,  9,  7]),
-indices=tensor([3, 1, 2, 0]))
 ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(132)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
+&gt; <span class="ansi-green-fg">&lt;ipython-input-16-ffe59a3ddac7&gt;</span>(132)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-fg">    130 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># Sort input data by decreasing lengths; why? apparent below</span>
 <span class="ansi-green-fg">    131 </span><span class="ansi-red-fg">        </span>caption_lengths<span class="ansi-blue-fg">,</span> sort_ind <span class="ansi-blue-fg">=</span> caption_lengths<span class="ansi-blue-fg">.</span>squeeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>sort<span class="ansi-blue-fg">(</span>dim<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> descending<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">--&gt; 132 </span><span class="ansi-red-fg">        </span>encoder_out <span class="ansi-blue-fg">=</span> encoder_out<span class="ansi-blue-fg">[</span>sort_ind<span class="ansi-blue-fg">]</span>
@@ -1150,306 +1280,42 @@ ipdb&gt; n
 <span class="ansi-green-fg">    134 </span>
 
 ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(133)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
+&gt; <span class="ansi-green-fg">&lt;ipython-input-16-ffe59a3ddac7&gt;</span>(133)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-fg">    131 </span><span class="ansi-red-fg">        </span>caption_lengths<span class="ansi-blue-fg">,</span> sort_ind <span class="ansi-blue-fg">=</span> caption_lengths<span class="ansi-blue-fg">.</span>squeeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>sort<span class="ansi-blue-fg">(</span>dim<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> descending<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">    132 </span><span class="ansi-red-fg">        </span>encoder_out <span class="ansi-blue-fg">=</span> encoder_out<span class="ansi-blue-fg">[</span>sort_ind<span class="ansi-blue-fg">]</span>
 <span class="ansi-green-fg">--&gt; 133 </span><span class="ansi-red-fg">        </span>encoded_captions <span class="ansi-blue-fg">=</span> encoded_captions<span class="ansi-blue-fg">[</span>sort_ind<span class="ansi-blue-fg">]</span>
 <span class="ansi-green-fg">    134 </span>
 <span class="ansi-green-fg">    135 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># Embedding</span>
 
-ipdb&gt; p encoder_out.shape
-torch.Size([4, 196, 2048])
-ipdb&gt; encoded_captions.shape
-torch.Size([4, 52])
-ipdb&gt; encoded_captions[0]
-tensor([2631,  226,   37,    8, 2630, 1832, 2632,    0,    0,    0,    0,    0,
-           0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-           0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-           0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-           0,    0,    0,    0])
 ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(136)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
+&gt; <span class="ansi-green-fg">&lt;ipython-input-16-ffe59a3ddac7&gt;</span>(136)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-fg">    134 </span>
 <span class="ansi-green-fg">    135 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># Embedding</span>
 <span class="ansi-green-fg">--&gt; 136 </span><span class="ansi-red-fg">        </span>embeddings <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>embedding<span class="ansi-blue-fg">(</span>encoded_captions<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, max_caption_length, embed_dim)</span>
 <span class="ansi-green-fg">    137 </span>
 <span class="ansi-green-fg">    138 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># Initialize LSTM state</span>
 
-ipdb&gt; encoded_captions
-tensor([[2631,    1,   99,   67,    1,   72,  296,   85,  402,    8,    9, 1218,
-          365,    8, 1334, 2632,    0,    0,    0,    0,    0,    0,    0,    0,
-            0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-            0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-            0,    0,    0,    0],
-        [2631,    1,   46,  140,  285,   27,  198,  745,   78, 1783, 2632,    0,
-            0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-            0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-            0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-            0,    0,    0,    0],
-        [2631,  235,  288,   83, 1471,    8,    1,  370, 2632,    0,    0,    0,
-            0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-            0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-            0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-            0,    0,    0,    0],
-        [2631,  226,   37,    8, 2630, 1832, 2632,    0,    0,    0,    0,    0,
-            0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-            0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-            0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-            0,    0,    0,    0]])
+ipdb&gt; encoded_captions.shape
+torch.Size([4, 52])
+ipdb&gt; p encoded_captions[0]
+tensor([2631,    1, 1941,  111,   67,    9, 1029,   27,    1,  522,   58,    1,
+         257,    3,  111,    8,    9,   28, 2632,    0,    0,    0,    0,    0,
+           0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+           0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+           0,    0,    0,    0])
+ipdb&gt; p encoded_captions[1]
+tensor([2631,    1,  175,   27,  105,  288,  702, 1249,   67,  198, 1018, 2630,
+          42,  198,  569, 2630, 2630, 2632,    0,    0,    0,    0,    0,    0,
+           0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+           0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+           0,    0,    0,    0])
 ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(139)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
+&gt; <span class="ansi-green-fg">&lt;ipython-input-16-ffe59a3ddac7&gt;</span>(139)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-fg">    137 </span>
 <span class="ansi-green-fg">    138 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># Initialize LSTM state</span>
 <span class="ansi-green-fg">--&gt; 139 </span><span class="ansi-red-fg">        </span>h<span class="ansi-blue-fg">,</span> c <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>init_hidden_state<span class="ansi-blue-fg">(</span>encoder_out<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, decoder_dim)</span>
 <span class="ansi-green-fg">    140 </span>
 <span class="ansi-green-fg">    141 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># We won&#39;t decode at the &lt;end&gt; position, since we&#39;ve finished generating as soon as we generate &lt;end&gt;</span>
-
-ipdb&gt; p encoder_out.shape
-torch.Size([4, 196, 2048])
-ipdb&gt; p h.shape
-*** NameError: name &#39;h&#39; is not defined
-ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(143)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">    141 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># We won&#39;t decode at the &lt;end&gt; position, since we&#39;ve finished generating as soon as we generate &lt;end&gt;</span>
-<span class="ansi-green-fg">    142 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># So, decoding lengths are actual lengths - 1</span>
-<span class="ansi-green-fg">--&gt; 143 </span><span class="ansi-red-fg">        </span>decode_lengths <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span>caption_lengths <span class="ansi-blue-fg">-</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>tolist<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">    144 </span>
-<span class="ansi-green-fg">    145 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># Create tensors to hold word predicion scores and alphas</span>
-
-ipdb&gt; p h.shape
-torch.Size([4, 512])
-ipdb&gt; p c.shape
-torch.Size([4, 512])
-ipdb&gt; p self.init_h
-Linear(in_features=2048, out_features=512, bias=True)
-ipdb&gt; p encoder_out.mean(dim=1).shape
-torch.Size([4, 2048])
-ipdb&gt; encoder_out.shape
-torch.Size([4, 196, 2048])
-ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(146)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">    144 </span>
-<span class="ansi-green-fg">    145 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># Create tensors to hold word predicion scores and alphas</span>
-<span class="ansi-green-fg">--&gt; 146 </span><span class="ansi-red-fg">        </span>predictions <span class="ansi-blue-fg">=</span> torch<span class="ansi-blue-fg">.</span>zeros<span class="ansi-blue-fg">(</span>batch_size<span class="ansi-blue-fg">,</span> max<span class="ansi-blue-fg">(</span>decode_lengths<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> vocab_size<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>to<span class="ansi-blue-fg">(</span>device<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">    147 </span><span class="ansi-red-fg">        </span>alphas <span class="ansi-blue-fg">=</span> torch<span class="ansi-blue-fg">.</span>zeros<span class="ansi-blue-fg">(</span>batch_size<span class="ansi-blue-fg">,</span> max<span class="ansi-blue-fg">(</span>decode_lengths<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> num_pixels<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>to<span class="ansi-blue-fg">(</span>device<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">    148 </span>
-
-ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(147)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">    145 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># Create tensors to hold word predicion scores and alphas</span>
-<span class="ansi-green-fg">    146 </span><span class="ansi-red-fg">        </span>predictions <span class="ansi-blue-fg">=</span> torch<span class="ansi-blue-fg">.</span>zeros<span class="ansi-blue-fg">(</span>batch_size<span class="ansi-blue-fg">,</span> max<span class="ansi-blue-fg">(</span>decode_lengths<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> vocab_size<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>to<span class="ansi-blue-fg">(</span>device<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 147 </span><span class="ansi-red-fg">        </span>alphas <span class="ansi-blue-fg">=</span> torch<span class="ansi-blue-fg">.</span>zeros<span class="ansi-blue-fg">(</span>batch_size<span class="ansi-blue-fg">,</span> max<span class="ansi-blue-fg">(</span>decode_lengths<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> num_pixels<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>to<span class="ansi-blue-fg">(</span>device<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">    148 </span>
-<span class="ansi-green-fg">    149 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># At each time-step, decode by</span>
-
-ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(152)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">    150 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># attention-weighing the encoder&#39;s output based on the decoder&#39;s previous hidden state output</span>
-<span class="ansi-green-fg">    151 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># then generate a new word in the decoder with the previous word and the attention weighted encoding</span>
-<span class="ansi-green-fg">--&gt; 152 </span><span class="ansi-red-fg">        </span><span class="ansi-green-fg">for</span> t <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span>max<span class="ansi-blue-fg">(</span>decode_lengths<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">    153 </span><span class="ansi-red-fg">            </span>batch_size_t <span class="ansi-blue-fg">=</span> sum<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span>l <span class="ansi-blue-fg">&gt;</span> t <span class="ansi-green-fg">for</span> l <span class="ansi-green-fg">in</span> decode_lengths<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">    154 </span><span class="ansi-red-fg">            attention_weighted_encoding, alpha = self.attention(encoder_out[:batch_size_t],
-</span>
-ipdb&gt; decode_lengths
-[15, 10, 8, 6]
-ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(153)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">    151 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg"># then generate a new word in the decoder with the previous word and the attention weighted encoding</span>
-<span class="ansi-green-fg">    152 </span><span class="ansi-red-fg">        </span><span class="ansi-green-fg">for</span> t <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span>max<span class="ansi-blue-fg">(</span>decode_lengths<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 153 </span><span class="ansi-red-fg">            </span>batch_size_t <span class="ansi-blue-fg">=</span> sum<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span>l <span class="ansi-blue-fg">&gt;</span> t <span class="ansi-green-fg">for</span> l <span class="ansi-green-fg">in</span> decode_lengths<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">    154 </span><span class="ansi-red-fg">            attention_weighted_encoding, alpha = self.attention(encoder_out[:batch_size_t],
-</span><span class="ansi-green-fg">    155 </span><span class="ansi-red-fg">                                                                h[:batch_size_t])
-</span>
-ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(154)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">    152 </span><span class="ansi-red-fg">        </span><span class="ansi-green-fg">for</span> t <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span>max<span class="ansi-blue-fg">(</span>decode_lengths<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">    153 </span><span class="ansi-red-fg">            </span>batch_size_t <span class="ansi-blue-fg">=</span> sum<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span>l <span class="ansi-blue-fg">&gt;</span> t <span class="ansi-green-fg">for</span> l <span class="ansi-green-fg">in</span> decode_lengths<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 154 </span><span class="ansi-red-fg">            attention_weighted_encoding, alpha = self.attention(encoder_out[:batch_size_t],
-</span><span class="ansi-green-fg">    155 </span><span class="ansi-red-fg">                                                                h[:batch_size_t])
-</span><span class="ansi-green-fg">    156 </span><span class="ansi-red-fg">            </span>gate <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>sigmoid<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>f_beta<span class="ansi-blue-fg">(</span>h<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span>batch_size_t<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># gating scalar, (batch_size_t, encoder_dim)</span>
-
-ipdb&gt; batch_size_t
-4
-ipdb&gt; encoder_out[:batch_size_t]
-tensor([[[0.6308, 0.2627, 1.0739,  ..., 2.4373, 0.0000, 1.9724],
-         [0.8419, 0.1314, 0.8361,  ..., 1.8396, 0.0000, 2.0814],
-         [1.0529, 0.0000, 0.5982,  ..., 1.2419, 0.0000, 2.1903],
-         ...,
-         [1.4476, 1.2110, 0.6076,  ..., 3.1301, 0.1678, 0.5436],
-         [1.8726, 1.1007, 0.7514,  ..., 2.8805, 0.8075, 1.8848],
-         [2.2976, 0.9904, 0.8953,  ..., 2.6309, 1.4473, 3.2261]],
-
-        [[0.6308, 0.2627, 1.0739,  ..., 2.4373, 0.0000, 1.9724],
-         [0.8419, 0.1314, 0.8361,  ..., 1.8396, 0.0000, 2.0814],
-         [1.0529, 0.0000, 0.5982,  ..., 1.2419, 0.0000, 2.1903],
-         ...,
-         [1.4476, 1.2110, 0.6076,  ..., 3.1301, 0.1678, 0.5436],
-         [1.8726, 1.1007, 0.7514,  ..., 2.8805, 0.8075, 1.8848],
-         [2.2976, 0.9904, 0.8953,  ..., 2.6309, 1.4473, 3.2261]],
-
-        [[0.6308, 0.2627, 1.0739,  ..., 2.4373, 0.0000, 1.9724],
-         [0.8419, 0.1314, 0.8361,  ..., 1.8396, 0.0000, 2.0814],
-         [1.0529, 0.0000, 0.5982,  ..., 1.2419, 0.0000, 2.1903],
-         ...,
-         [1.4476, 1.2110, 0.6076,  ..., 3.1301, 0.1678, 0.5436],
-         [1.8726, 1.1007, 0.7514,  ..., 2.8805, 0.8075, 1.8848],
-         [2.2976, 0.9904, 0.8953,  ..., 2.6309, 1.4473, 3.2261]],
-
-        [[0.6308, 0.2627, 1.0739,  ..., 2.4373, 0.0000, 1.9724],
-         [0.8419, 0.1314, 0.8361,  ..., 1.8396, 0.0000, 2.0814],
-         [1.0529, 0.0000, 0.5982,  ..., 1.2419, 0.0000, 2.1903],
-         ...,
-         [1.4476, 1.2110, 0.6076,  ..., 3.1301, 0.1678, 0.5436],
-         [1.8726, 1.1007, 0.7514,  ..., 2.8805, 0.8075, 1.8848],
-         [2.2976, 0.9904, 0.8953,  ..., 2.6309, 1.4473, 3.2261]]])
-ipdb&gt; encoder_out[:batch_size_t].shape
-torch.Size([4, 196, 2048])
-ipdb&gt; h[:batch_size_t].shape
-*** No help for &#39;[:batch_size_t].shape&#39;
-ipdb&gt; p h[:batch_size_t].shape
-torch.Size([4, 512])
-ipdb&gt; c
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(35)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">     33 </span><span class="ansi-red-fg">        &#34;&#34;&#34;
-</span><span class="ansi-green-fg">     34 </span><span class="ansi-red-fg">        </span><span class="ansi-green-fg">import</span> pdb<span class="ansi-blue-fg">;</span>pdb<span class="ansi-blue-fg">.</span>set_trace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 35 </span><span class="ansi-red-fg">        </span>att1 <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>encoder_att<span class="ansi-blue-fg">(</span>encoder_out<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, num_pixels, attention_dim)</span>
-<span class="ansi-green-fg">     36 </span><span class="ansi-red-fg">        </span>att2 <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>decoder_att<span class="ansi-blue-fg">(</span>decoder_hidden<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, attention_dim)</span>
-<span class="ansi-green-fg">     37 </span><span class="ansi-red-fg">        </span>att <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>full_att<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>relu<span class="ansi-blue-fg">(</span>att1 <span class="ansi-blue-fg">+</span> att2<span class="ansi-blue-fg">.</span>unsqueeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>squeeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, num_pixels)</span>
-
-ipdb&gt; p encoder_out.shape
-torch.Size([4, 196, 2048])
-ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(36)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">     34 </span><span class="ansi-red-fg">        </span><span class="ansi-green-fg">import</span> pdb<span class="ansi-blue-fg">;</span>pdb<span class="ansi-blue-fg">.</span>set_trace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">     35 </span><span class="ansi-red-fg">        </span>att1 <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>encoder_att<span class="ansi-blue-fg">(</span>encoder_out<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, num_pixels, attention_dim)</span>
-<span class="ansi-green-fg">---&gt; 36 </span><span class="ansi-red-fg">        </span>att2 <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>decoder_att<span class="ansi-blue-fg">(</span>decoder_hidden<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, attention_dim)</span>
-<span class="ansi-green-fg">     37 </span><span class="ansi-red-fg">        </span>att <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>full_att<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>relu<span class="ansi-blue-fg">(</span>att1 <span class="ansi-blue-fg">+</span> att2<span class="ansi-blue-fg">.</span>unsqueeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>squeeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, num_pixels)</span>
-<span class="ansi-green-fg">     38 </span><span class="ansi-red-fg">        </span>alpha <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>softmax<span class="ansi-blue-fg">(</span>att<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, num_pixels)</span>
-
-ipdb&gt; p att1.shape
-torch.Size([4, 196, 512])
-ipdb&gt; p decoder_hidden.shape
-torch.Size([4, 512])
-ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(37)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">     35 </span><span class="ansi-red-fg">        </span>att1 <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>encoder_att<span class="ansi-blue-fg">(</span>encoder_out<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, num_pixels, attention_dim)</span>
-<span class="ansi-green-fg">     36 </span><span class="ansi-red-fg">        </span>att2 <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>decoder_att<span class="ansi-blue-fg">(</span>decoder_hidden<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, attention_dim)</span>
-<span class="ansi-green-fg">---&gt; 37 </span><span class="ansi-red-fg">        </span>att <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>full_att<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>relu<span class="ansi-blue-fg">(</span>att1 <span class="ansi-blue-fg">+</span> att2<span class="ansi-blue-fg">.</span>unsqueeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>squeeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, num_pixels)</span>
-<span class="ansi-green-fg">     38 </span><span class="ansi-red-fg">        </span>alpha <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>softmax<span class="ansi-blue-fg">(</span>att<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, num_pixels)</span>
-<span class="ansi-green-fg">     39 </span><span class="ansi-red-fg">        </span>attention_weighted_encoding <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span>encoder_out <span class="ansi-blue-fg">*</span> alpha<span class="ansi-blue-fg">.</span>unsqueeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>sum<span class="ansi-blue-fg">(</span>dim<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, encoder_dim)</span>
-
-ipdb&gt; p att2.shape
-torch.Size([4, 512])
-ipdb&gt; p att1.shape
-torch.Size([4, 196, 512])
-ipdb&gt; self.relu(att1 + att2.unsqueeze(1))
-tensor([[[0.9818, 0.0000, 1.0762,  ..., 0.0000, 1.2722, 1.0555],
-         [0.8515, 0.0000, 1.2245,  ..., 0.0000, 1.7601, 1.1482],
-         [0.7212, 0.0000, 1.3729,  ..., 0.0000, 2.2480, 1.2408],
-         ...,
-         [0.0000, 0.7818, 0.0000,  ..., 0.2425, 1.2898, 1.3694],
-         [0.0000, 0.4922, 0.0000,  ..., 0.3724, 1.5495, 1.5270],
-         [0.0000, 0.2026, 0.1286,  ..., 0.5024, 1.8092, 1.6846]],
-
-        [[0.9818, 0.0000, 1.0762,  ..., 0.0000, 1.2722, 1.0555],
-         [0.8515, 0.0000, 1.2245,  ..., 0.0000, 1.7601, 1.1482],
-         [0.7212, 0.0000, 1.3729,  ..., 0.0000, 2.2480, 1.2408],
-         ...,
-         [0.0000, 0.7818, 0.0000,  ..., 0.2425, 1.2898, 1.3694],
-         [0.0000, 0.4922, 0.0000,  ..., 0.3724, 1.5495, 1.5270],
-         [0.0000, 0.2026, 0.1286,  ..., 0.5024, 1.8092, 1.6846]],
-
-        [[0.9818, 0.0000, 1.0762,  ..., 0.0000, 1.2722, 1.0555],
-         [0.8515, 0.0000, 1.2245,  ..., 0.0000, 1.7601, 1.1482],
-         [0.7212, 0.0000, 1.3729,  ..., 0.0000, 2.2480, 1.2408],
-         ...,
-         [0.0000, 0.7818, 0.0000,  ..., 0.2425, 1.2898, 1.3694],
-         [0.0000, 0.4922, 0.0000,  ..., 0.3724, 1.5495, 1.5270],
-         [0.0000, 0.2026, 0.1286,  ..., 0.5024, 1.8092, 1.6846]],
-
-        [[0.9818, 0.0000, 1.0762,  ..., 0.0000, 1.2722, 1.0555],
-         [0.8515, 0.0000, 1.2245,  ..., 0.0000, 1.7601, 1.1482],
-         [0.7212, 0.0000, 1.3729,  ..., 0.0000, 2.2480, 1.2408],
-         ...,
-         [0.0000, 0.7818, 0.0000,  ..., 0.2425, 1.2898, 1.3694],
-         [0.0000, 0.4922, 0.0000,  ..., 0.3724, 1.5495, 1.5270],
-         [0.0000, 0.2026, 0.1286,  ..., 0.5024, 1.8092, 1.6846]]],
-       grad_fn=&lt;ReluBackward0&gt;)
-ipdb&gt; self.relu(att1 + att2.unsqueeze(1)).shap
-*** AttributeError: &#39;Tensor&#39; object has no attribute &#39;shap&#39;
-ipdb&gt; self.relu(att1 + att2.unsqueeze(1)).shape
-torch.Size([4, 196, 512])
-ipdb&gt; att1.shape
-torch.Size([4, 196, 512])
-ipdb&gt; att2.shape
-torch.Size([4, 512])
-ipdb&gt; att2.unsqueeze(1).shape
-torch.Size([4, 1, 512])
-ipdb&gt; p (att1 + att2.unsqueeze(1)).shape
-torch.Size([4, 196, 512])
-ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(38)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">     36 </span><span class="ansi-red-fg">        </span>att2 <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>decoder_att<span class="ansi-blue-fg">(</span>decoder_hidden<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, attention_dim)</span>
-<span class="ansi-green-fg">     37 </span><span class="ansi-red-fg">        </span>att <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>full_att<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>relu<span class="ansi-blue-fg">(</span>att1 <span class="ansi-blue-fg">+</span> att2<span class="ansi-blue-fg">.</span>unsqueeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>squeeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, num_pixels)</span>
-<span class="ansi-green-fg">---&gt; 38 </span><span class="ansi-red-fg">        </span>alpha <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>softmax<span class="ansi-blue-fg">(</span>att<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, num_pixels)</span>
-<span class="ansi-green-fg">     39 </span><span class="ansi-red-fg">        </span>attention_weighted_encoding <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span>encoder_out <span class="ansi-blue-fg">*</span> alpha<span class="ansi-blue-fg">.</span>unsqueeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>sum<span class="ansi-blue-fg">(</span>dim<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, encoder_dim)</span>
-<span class="ansi-green-fg">     40 </span>
-
-ipdb&gt; p att.shape
-torch.Size([4, 196])
-ipdb&gt; p self.relu(att1 + att2.unsqueeze(1)).shape
-torch.Size([4, 196, 512])
-ipdb&gt; p att.shape
-torch.Size([4, 196])
-ipdb&gt; p self.full_att(self.relu(att1 + att2.unsqueeze(1))).shape
-torch.Size([4, 196, 1])
-ipdb&gt; p alpha = self.softmax(att)
-*** SyntaxError: invalid syntax
-ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(39)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">     37 </span><span class="ansi-red-fg">        </span>att <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>full_att<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>relu<span class="ansi-blue-fg">(</span>att1 <span class="ansi-blue-fg">+</span> att2<span class="ansi-blue-fg">.</span>unsqueeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>squeeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, num_pixels)</span>
-<span class="ansi-green-fg">     38 </span><span class="ansi-red-fg">        </span>alpha <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>softmax<span class="ansi-blue-fg">(</span>att<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, num_pixels)</span>
-<span class="ansi-green-fg">---&gt; 39 </span><span class="ansi-red-fg">        </span>attention_weighted_encoding <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span>encoder_out <span class="ansi-blue-fg">*</span> alpha<span class="ansi-blue-fg">.</span>unsqueeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>sum<span class="ansi-blue-fg">(</span>dim<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, encoder_dim)</span>
-<span class="ansi-green-fg">     40 </span>
-<span class="ansi-green-fg">     41 </span><span class="ansi-red-fg">        </span><span class="ansi-green-fg">return</span> attention_weighted_encoding<span class="ansi-blue-fg">,</span> alpha
-
-ipdb&gt; p encoder_out.shape
-torch.Size([4, 196, 2048])
-ipdb&gt; p alpha.shape
-torch.Size([4, 196])
-ipdb&gt; p alpha[0].sum()
-tensor(1.0000, grad_fn=&lt;SumBackward0&gt;)
-ipdb&gt; p alpha[0]
-tensor([0.0059, 0.0061, 0.0065, 0.0062, 0.0062, 0.0057, 0.0052, 0.0052, 0.0053,
-        0.0055, 0.0053, 0.0054, 0.0047, 0.0040, 0.0057, 0.0057, 0.0059, 0.0056,
-        0.0054, 0.0052, 0.0052, 0.0053, 0.0050, 0.0049, 0.0049, 0.0047, 0.0043,
-        0.0038, 0.0053, 0.0054, 0.0055, 0.0051, 0.0049, 0.0049, 0.0051, 0.0056,
-        0.0049, 0.0046, 0.0045, 0.0042, 0.0040, 0.0039, 0.0062, 0.0058, 0.0055,
-        0.0052, 0.0050, 0.0049, 0.0049, 0.0054, 0.0049, 0.0046, 0.0046, 0.0046,
-        0.0046, 0.0043, 0.0070, 0.0063, 0.0054, 0.0051, 0.0051, 0.0050, 0.0048,
-        0.0049, 0.0048, 0.0047, 0.0047, 0.0046, 0.0046, 0.0045, 0.0064, 0.0060,
-        0.0057, 0.0051, 0.0048, 0.0047, 0.0046, 0.0048, 0.0048, 0.0046, 0.0047,
-        0.0049, 0.0049, 0.0049, 0.0059, 0.0056, 0.0055, 0.0050, 0.0045, 0.0044,
-        0.0045, 0.0047, 0.0046, 0.0045, 0.0049, 0.0054, 0.0053, 0.0055, 0.0055,
-        0.0055, 0.0057, 0.0052, 0.0050, 0.0048, 0.0047, 0.0046, 0.0048, 0.0049,
-        0.0050, 0.0052, 0.0053, 0.0054, 0.0054, 0.0053, 0.0054, 0.0051, 0.0049,
-        0.0049, 0.0049, 0.0049, 0.0050, 0.0050, 0.0048, 0.0048, 0.0050, 0.0052,
-        0.0053, 0.0051, 0.0051, 0.0049, 0.0048, 0.0049, 0.0051, 0.0053, 0.0053,
-        0.0052, 0.0048, 0.0045, 0.0047, 0.0049, 0.0065, 0.0063, 0.0059, 0.0055,
-        0.0052, 0.0051, 0.0050, 0.0049, 0.0049, 0.0049, 0.0044, 0.0043, 0.0044,
-        0.0046, 0.0077, 0.0072, 0.0068, 0.0062, 0.0055, 0.0052, 0.0050, 0.0049,
-        0.0047, 0.0046, 0.0042, 0.0040, 0.0043, 0.0045, 0.0077, 0.0070, 0.0065,
-        0.0062, 0.0056, 0.0052, 0.0048, 0.0048, 0.0045, 0.0043, 0.0040, 0.0038,
-        0.0037, 0.0038, 0.0079, 0.0068, 0.0060, 0.0061, 0.0058, 0.0053, 0.0049,
-        0.0047, 0.0043, 0.0040, 0.0038, 0.0036, 0.0033, 0.0031],
-       grad_fn=&lt;SelectBackward&gt;)
-ipdb&gt; n
-&gt; <span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span>(41)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">     39 </span><span class="ansi-red-fg">        </span>attention_weighted_encoding <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span>encoder_out <span class="ansi-blue-fg">*</span> alpha<span class="ansi-blue-fg">.</span>unsqueeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>sum<span class="ansi-blue-fg">(</span>dim<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, encoder_dim)</span>
-<span class="ansi-green-fg">     40 </span>
-<span class="ansi-green-fg">---&gt; 41 </span><span class="ansi-red-fg">        </span><span class="ansi-green-fg">return</span> attention_weighted_encoding<span class="ansi-blue-fg">,</span> alpha
-<span class="ansi-green-fg">     42 </span>
-<span class="ansi-green-fg">     43 </span>
 
 ipdb&gt; q
 </pre>
@@ -1462,61 +1328,49 @@ ipdb&gt; q
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">BdbQuit</span>                                   Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-12-cb665db24f90&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     20</span>           encoder_optimizer<span class="ansi-blue-fg">=</span>encoder_optimizer<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     21</span>           decoder_optimizer<span class="ansi-blue-fg">=</span>decoder_optimizer<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">---&gt; 22</span><span class="ansi-red-fg">           epoch=epoch)
-</span>
-<span class="ansi-green-fg">&lt;ipython-input-7-3cbbf1757317&gt;</span> in <span class="ansi-cyan-fg">train</span><span class="ansi-blue-fg">(train_loader, encoder, decoder, criterion, encoder_optimizer, decoder_optimizer, epoch)</span>
-<span class="ansi-green-intense-fg ansi-bold">     31</span>         <span class="ansi-red-fg"># Forward prop.</span>
-<span class="ansi-green-intense-fg ansi-bold">     32</span>         imgs <span class="ansi-blue-fg">=</span> encoder<span class="ansi-blue-fg">(</span>imgs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 33</span><span class="ansi-red-fg">         </span>scores<span class="ansi-blue-fg">,</span> caps_sorted<span class="ansi-blue-fg">,</span> decode_lengths<span class="ansi-blue-fg">,</span> alphas<span class="ansi-blue-fg">,</span> sort_ind <span class="ansi-blue-fg">=</span> decoder<span class="ansi-blue-fg">(</span>imgs<span class="ansi-blue-fg">,</span> caps<span class="ansi-blue-fg">,</span> caplens<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     34</span> 
-<span class="ansi-green-intense-fg ansi-bold">     35</span>         <span class="ansi-red-fg"># Since we decoded starting with &lt;start&gt;, the targets are all words after &lt;start&gt;, up to &lt;end&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-29-cb665db24f90&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     14</span> <span class="ansi-green-fg">for</span> epoch <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">     15</span>     <span class="ansi-red-fg"># One epoch&#39;s training</span>
+<span class="ansi-green-fg">---&gt; 16</span><span class="ansi-red-fg">     train(train_loader=train_loader,
+</span><span class="ansi-green-intense-fg ansi-bold">     17</span>           encoder<span class="ansi-blue-fg">=</span>encoder<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">     18</span>           decoder<span class="ansi-blue-fg">=</span>decoder<span class="ansi-blue-fg">,</span>
 
-<span class="ansi-green-fg">~/anaconda3/envs/my_env/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, *input, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    530</span>             result <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_slow_forward<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>input<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    531</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 532</span><span class="ansi-red-fg">             </span>result <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>forward<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>input<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    533</span>         <span class="ansi-green-fg">for</span> hook <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>_forward_hooks<span class="ansi-blue-fg">.</span>values<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    534</span>             hook_result <span class="ansi-blue-fg">=</span> hook<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> input<span class="ansi-blue-fg">,</span> result<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">&lt;ipython-input-18-c9c9b233a3c8&gt;</span> in <span class="ansi-cyan-fg">train</span><span class="ansi-blue-fg">(train_loader, encoder, decoder, criterion, encoder_optimizer, decoder_optimizer, epoch)</span>
+<span class="ansi-green-intense-fg ansi-bold">     30</span>         <span class="ansi-red-fg"># Forward prop.</span>
+<span class="ansi-green-intense-fg ansi-bold">     31</span>         imgs <span class="ansi-blue-fg">=</span> encoder<span class="ansi-blue-fg">(</span>imgs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 32</span><span class="ansi-red-fg">         </span>scores<span class="ansi-blue-fg">,</span> caps_sorted<span class="ansi-blue-fg">,</span> decode_lengths<span class="ansi-blue-fg">,</span> alphas<span class="ansi-blue-fg">,</span> sort_ind <span class="ansi-blue-fg">=</span> decoder<span class="ansi-blue-fg">(</span>imgs<span class="ansi-blue-fg">,</span> caps<span class="ansi-blue-fg">,</span> caplens<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     33</span> 
+<span class="ansi-green-intense-fg ansi-bold">     34</span>         <span class="ansi-red-fg"># Since we decoded starting with &lt;start&gt;, the targets are all words after &lt;start&gt;, up to &lt;end&gt;</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span> in <span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">(self, encoder_out, encoded_captions, caption_lengths)</span>
-<span class="ansi-green-intense-fg ansi-bold">    152</span>         <span class="ansi-green-fg">for</span> t <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span>max<span class="ansi-blue-fg">(</span>decode_lengths<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    153</span>             batch_size_t <span class="ansi-blue-fg">=</span> sum<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span>l <span class="ansi-blue-fg">&gt;</span> t <span class="ansi-green-fg">for</span> l <span class="ansi-green-fg">in</span> decode_lengths<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 154</span><span class="ansi-red-fg">             attention_weighted_encoding, alpha = self.attention(encoder_out[:batch_size_t],
-</span><span class="ansi-green-intense-fg ansi-bold">    155</span>                                                                 h[:batch_size_t])
-<span class="ansi-green-intense-fg ansi-bold">    156</span>             gate <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>sigmoid<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>f_beta<span class="ansi-blue-fg">(</span>h<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span>batch_size_t<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># gating scalar, (batch_size_t, encoder_dim)</span>
+<span class="ansi-green-fg">~/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py</span> in <span class="ansi-cyan-fg">_call_impl</span><span class="ansi-blue-fg">(self, *input, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    725</span>             result <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_slow_forward<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>input<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    726</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 727</span><span class="ansi-red-fg">             </span>result <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>forward<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>input<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    728</span>         for hook in itertools.chain(
+<span class="ansi-green-intense-fg ansi-bold">    729</span>                 _global_forward_hooks<span class="ansi-blue-fg">.</span>values<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
 
-<span class="ansi-green-fg">~/anaconda3/envs/my_env/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, *input, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    530</span>             result <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_slow_forward<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>input<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    531</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 532</span><span class="ansi-red-fg">             </span>result <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>forward<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>input<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    533</span>         <span class="ansi-green-fg">for</span> hook <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>_forward_hooks<span class="ansi-blue-fg">.</span>values<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    534</span>             hook_result <span class="ansi-blue-fg">=</span> hook<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> input<span class="ansi-blue-fg">,</span> result<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">&lt;ipython-input-16-ffe59a3ddac7&gt;</span> in <span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">(self, encoder_out, encoded_captions, caption_lengths)</span>
+<span class="ansi-green-intense-fg ansi-bold">    137</span> 
+<span class="ansi-green-intense-fg ansi-bold">    138</span>         <span class="ansi-red-fg"># Initialize LSTM state</span>
+<span class="ansi-green-fg">--&gt; 139</span><span class="ansi-red-fg">         </span>h<span class="ansi-blue-fg">,</span> c <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>init_hidden_state<span class="ansi-blue-fg">(</span>encoder_out<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, decoder_dim)</span>
+<span class="ansi-green-intense-fg ansi-bold">    140</span> 
+<span class="ansi-green-intense-fg ansi-bold">    141</span>         <span class="ansi-red-fg"># We won&#39;t decode at the &lt;end&gt; position, since we&#39;ve finished generating as soon as we generate &lt;end&gt;</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span> in <span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">(self, encoder_out, decoder_hidden)</span>
-<span class="ansi-green-intense-fg ansi-bold">     39</span>         attention_weighted_encoding <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span>encoder_out <span class="ansi-blue-fg">*</span> alpha<span class="ansi-blue-fg">.</span>unsqueeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>sum<span class="ansi-blue-fg">(</span>dim<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, encoder_dim)</span>
-<span class="ansi-green-intense-fg ansi-bold">     40</span> 
-<span class="ansi-green-fg">---&gt; 41</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> attention_weighted_encoding<span class="ansi-blue-fg">,</span> alpha
-<span class="ansi-green-intense-fg ansi-bold">     42</span> 
-<span class="ansi-green-intense-fg ansi-bold">     43</span> 
+<span class="ansi-green-fg">&lt;ipython-input-16-ffe59a3ddac7&gt;</span> in <span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">(self, encoder_out, encoded_captions, caption_lengths)</span>
+<span class="ansi-green-intense-fg ansi-bold">    137</span> 
+<span class="ansi-green-intense-fg ansi-bold">    138</span>         <span class="ansi-red-fg"># Initialize LSTM state</span>
+<span class="ansi-green-fg">--&gt; 139</span><span class="ansi-red-fg">         </span>h<span class="ansi-blue-fg">,</span> c <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>init_hidden_state<span class="ansi-blue-fg">(</span>encoder_out<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, decoder_dim)</span>
+<span class="ansi-green-intense-fg ansi-bold">    140</span> 
+<span class="ansi-green-intense-fg ansi-bold">    141</span>         <span class="ansi-red-fg"># We won&#39;t decode at the &lt;end&gt; position, since we&#39;ve finished generating as soon as we generate &lt;end&gt;</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-1-ffe59a3ddac7&gt;</span> in <span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">(self, encoder_out, decoder_hidden)</span>
-<span class="ansi-green-intense-fg ansi-bold">     39</span>         attention_weighted_encoding <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span>encoder_out <span class="ansi-blue-fg">*</span> alpha<span class="ansi-blue-fg">.</span>unsqueeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>sum<span class="ansi-blue-fg">(</span>dim<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># (batch_size, encoder_dim)</span>
-<span class="ansi-green-intense-fg ansi-bold">     40</span> 
-<span class="ansi-green-fg">---&gt; 41</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> attention_weighted_encoding<span class="ansi-blue-fg">,</span> alpha
-<span class="ansi-green-intense-fg ansi-bold">     42</span> 
-<span class="ansi-green-intense-fg ansi-bold">     43</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/my_env/lib/python3.7/bdb.py</span> in <span class="ansi-cyan-fg">trace_dispatch</span><span class="ansi-blue-fg">(self, frame, event, arg)</span>
+<span class="ansi-green-fg">~/anaconda3/lib/python3.8/bdb.py</span> in <span class="ansi-cyan-fg">trace_dispatch</span><span class="ansi-blue-fg">(self, frame, event, arg)</span>
 <span class="ansi-green-intense-fg ansi-bold">     86</span>             <span class="ansi-green-fg">return</span> <span class="ansi-red-fg"># None</span>
 <span class="ansi-green-intense-fg ansi-bold">     87</span>         <span class="ansi-green-fg">if</span> event <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;line&#39;</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">---&gt; 88</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>dispatch_line<span class="ansi-blue-fg">(</span>frame<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">     89</span>         <span class="ansi-green-fg">if</span> event <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;call&#39;</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">     90</span>             <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>dispatch_call<span class="ansi-blue-fg">(</span>frame<span class="ansi-blue-fg">,</span> arg<span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">~/anaconda3/envs/my_env/lib/python3.7/bdb.py</span> in <span class="ansi-cyan-fg">dispatch_line</span><span class="ansi-blue-fg">(self, frame)</span>
+<span class="ansi-green-fg">~/anaconda3/lib/python3.8/bdb.py</span> in <span class="ansi-cyan-fg">dispatch_line</span><span class="ansi-blue-fg">(self, frame)</span>
 <span class="ansi-green-intense-fg ansi-bold">    111</span>         <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>stop_here<span class="ansi-blue-fg">(</span>frame<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">or</span> self<span class="ansi-blue-fg">.</span>break_here<span class="ansi-blue-fg">(</span>frame<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">    112</span>             self<span class="ansi-blue-fg">.</span>user_line<span class="ansi-blue-fg">(</span>frame<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">--&gt; 113</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>quitting<span class="ansi-blue-fg">:</span> <span class="ansi-green-fg">raise</span> BdbQuit

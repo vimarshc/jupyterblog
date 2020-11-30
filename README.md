@@ -2,8 +2,6 @@
 
 
 
-![](assets/vimarsh.jpeg)
-
 ### Hi Everyone! ###
 
 I'm Vimarsh. My favourite pastime include reading about economics, playing Cities and Knights and running. I also do research and write code. Since March 2018 I've been using natural language processing to solve problems in the crawling and search pipelines at [Naukri](https://naukri.com). Naukri is India's largest job portal. Among other things Naukri caters to 20 million searches per week. This is supposed to be a repository of all Deep Learning academic papers I've been reading, intuition I've been drawing from them and experiments. This blog is relatively new so even though I've been tinkering with idea for some time I think I'll take some time to implement all ideas / write up all things I want to write up. 

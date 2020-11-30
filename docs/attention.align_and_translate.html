@@ -1,6 +1,6 @@
 ---
 
-title: align_and_translate
+title: Align and Translate
 
 
 keywords: fastai
@@ -683,7 +683,7 @@ $$\hat{y}_{t+1} = f(d(y_t), w_t, s_t)$$
         <span class="n">encoder_outputs</span><span class="p">,</span> <span class="n">hidden</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
                 
         <span class="c1">#first input to the decoder is the &lt;sos&gt; tokens</span>
-        <span class="nb">input</span> <span class="o">=</span> <span class="n">trg</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
+        <span class="nb">input</span> <span class="o">=</span> <span class="n">trg</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span> <span class="c1"># &lt;start&gt;</span>
         
         <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">trg_len</span><span class="p">):</span>
             
@@ -708,6 +708,29 @@ $$\hat{y}_{t+1} = f(d(y_t), w_t, s_t)$$
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-1-b7fe63eacc18&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">class</span> Seq2Seq<span class="ansi-blue-fg">(</span>nn<span class="ansi-blue-fg">.</span>Module<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span>     <span class="ansi-green-fg">def</span> __init__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> encoder<span class="ansi-blue-fg">,</span> decoder<span class="ansi-blue-fg">,</span> device<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span>         super<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>__init__<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> 
+<span class="ansi-green-intense-fg ansi-bold">      5</span>         self<span class="ansi-blue-fg">.</span>encoder <span class="ansi-blue-fg">=</span> encoder
+
+<span class="ansi-red-fg">NameError</span>: name &#39;nn&#39; is not defined</pre>
+</div>
+</div>
+
 </div>
 </div>
 
