@@ -183,8 +183,8 @@ nb_path: "attention.align_and_translate.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/vimarshc/anaconda3/envs/my_env/lib/python3.7/site-packages/torchtext/data/field.py:150: UserWarning: Field class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
-  warnings.warn(&#39;{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.&#39;.format(self.__class__.__name__), UserWarning)
+<pre>/home/vimarshc/anaconda3/lib/python3.8/site-packages/torchtext/data/field.py:150: UserWarning: Field class will be retired soon and moved to torchtext.legacy. Please see the most recent release notes for further information.
+  warnings.warn(&#39;{} class will be retired soon and moved to torchtext.legacy. Please see the most recent release notes for further information.&#39;.format(self.__class__.__name__), UserWarning)
 </pre>
 </div>
 </div>
@@ -214,60 +214,6 @@ nb_path: "attention.align_and_translate.ipynb"
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>downloading training.tar.gz
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>training.tar.gz: 100%|██████████| 1.21M/1.21M [00:04&lt;00:00, 276kB/s] 
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>downloading validation.tar.gz
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>validation.tar.gz: 100%|██████████| 46.3k/46.3k [00:00&lt;00:00, 109kB/s] 
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>downloading mmt_task1_test2016.tar.gz
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>mmt_task1_test2016.tar.gz: 100%|██████████| 66.2k/66.2k [00:00&lt;00:00, 114kB/s] 
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -320,6 +266,21 @@ nb_path: "attention.align_and_translate.ipynb"
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/home/vimarshc/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+  return torch._C._cuda_getDeviceCount() &gt; 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -346,21 +307,6 @@ nb_path: "attention.align_and_translate.ipynb"
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/vimarshc/anaconda3/envs/my_env/lib/python3.7/site-packages/torchtext/data/iterator.py:48: UserWarning: BucketIterator class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.
-  warnings.warn(&#39;{} class will be retired in the 0.8.0 release and moved to torchtext.legacy. Please see 0.7.0 release notes for further information.&#39;.format(self.__class__.__name__), UserWarning)
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -711,29 +657,6 @@ $$\hat{y}_{t+1} = f(d(y_t), w_t, s_t)$$
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-b7fe63eacc18&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">class</span> Seq2Seq<span class="ansi-blue-fg">(</span>nn<span class="ansi-blue-fg">.</span>Module<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span>     <span class="ansi-green-fg">def</span> __init__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> encoder<span class="ansi-blue-fg">,</span> decoder<span class="ansi-blue-fg">,</span> device<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span>         super<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>__init__<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> 
-<span class="ansi-green-intense-fg ansi-bold">      5</span>         self<span class="ansi-blue-fg">.</span>encoder <span class="ansi-blue-fg">=</span> encoder
-
-<span class="ansi-red-fg">NameError</span>: name &#39;nn&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -951,6 +874,7 @@ $$\hat{y}_{t+1} = f(d(y_t), w_t, s_t)$$
     <span class="n">epoch_loss</span> <span class="o">=</span> <span class="mi">0</span>
     
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">batch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">pdb</span><span class="p">;</span><span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
         
         <span class="n">src</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">src</span>
         <span class="n">trg</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">trg</span>
@@ -1121,42 +1045,29 @@ $$\hat{y}_{t+1} = f(d(y_t), w_t, s_t)$$
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&gt; <span class="ansi-green-fg">&lt;ipython-input-65-be3c9d004655&gt;</span>(17)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">     15 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg">#src = [src len, batch size]</span>
-<span class="ansi-green-fg">     16 </span>
-<span class="ansi-green-fg">---&gt; 17 </span><span class="ansi-red-fg">        </span>embedded <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>dropout<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>embedding<span class="ansi-blue-fg">(</span>src<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">     18 </span>
-<span class="ansi-green-fg">     19 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg">#embedded = [src len, batch size, emb dim]</span>
-
-ipdb&gt; c
-&gt; <span class="ansi-green-fg">&lt;ipython-input-67-6a1fdeeb43f5&gt;</span>(22)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">     20 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg">#encoder_outputs = [src len, batch size, enc hid dim * 2]</span>
-<span class="ansi-green-fg">     21 </span>
-<span class="ansi-green-fg">---&gt; 22 </span><span class="ansi-red-fg">        </span>input <span class="ansi-blue-fg">=</span> input<span class="ansi-blue-fg">.</span>unsqueeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">     23 </span>
-<span class="ansi-green-fg">     24 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg">#input = [1, batch size]</span>
-
-ipdb&gt; c
-&gt; <span class="ansi-green-fg">&lt;ipython-input-66-2ea731702c9b&gt;</span>(13)<span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">     11 </span><span class="ansi-red-fg">        </span><span class="ansi-red-fg">#encoder_outputs = [src len, batch size, enc hid dim * 2]</span>
+<pre>&gt; <span class="ansi-green-fg">&lt;ipython-input-50-8fa94dfdf34f&gt;</span>(10)<span class="ansi-cyan-fg">train</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">      8 </span><span class="ansi-red-fg">        </span><span class="ansi-green-fg">import</span> pdb<span class="ansi-blue-fg">;</span>pdb<span class="ansi-blue-fg">.</span>set_trace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">      9 </span>
+<span class="ansi-green-fg">---&gt; 10 </span><span class="ansi-red-fg">        </span>src <span class="ansi-blue-fg">=</span> batch<span class="ansi-blue-fg">.</span>src
+<span class="ansi-green-fg">     11 </span><span class="ansi-red-fg">        </span>trg <span class="ansi-blue-fg">=</span> batch<span class="ansi-blue-fg">.</span>trg
 <span class="ansi-green-fg">     12 </span>
-<span class="ansi-green-fg">---&gt; 13 </span><span class="ansi-red-fg">        </span>batch_size <span class="ansi-blue-fg">=</span> encoder_outputs<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-fg">     14 </span><span class="ansi-red-fg">        </span>src_len <span class="ansi-blue-fg">=</span> encoder_outputs<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-fg">     15 </span>
 
-ipdb&gt; hidden.shape
-torch.Size([4, 512])
-ipdb&gt; encoder_outputs.shape
-torch.Size([13, 4, 1024])
-ipdb&gt; hidden
-tensor([[-7.5650e-04,  7.9062e-04,  1.3830e-04,  ...,  3.4158e-04,
-         -6.9947e-04, -3.2217e-04],
-        [-8.7278e-04,  2.2164e-04,  2.9742e-04,  ...,  5.0298e-04,
-          9.6618e-05, -6.4496e-04],
-        [-5.7881e-04,  7.1773e-04,  3.2564e-04,  ...,  2.1025e-04,
-          6.9127e-05, -8.0912e-04],
-        [-2.4303e-04,  8.0293e-04, -3.2605e-05,  ...,  2.4994e-04,
-         -4.6907e-05, -1.9366e-04]], grad_fn=&lt;TanhBackward&gt;)
+ipdb&gt; p batch.src
+tensor([[   2,    2,    2,    2],
+        [  76,    8,    5,    5],
+        [ 298,   16,   26,   13],
+        [  52,   11,    7,   10],
+        [  12,   14,   46,    8],
+        [   6,  912, 2483,   16],
+        [ 791,   60,   55, 5656],
+        [   4,   21,   91,   20],
+        [   3,    6,    4,   88],
+        [   1,  660,    3, 1009],
+        [   1,  117,    1,    4],
+        [   1,    4,    1,    3],
+        [   1,    3,    1,    1]])
+ipdb&gt; p batch.src.shape
+torch.Size([13, 4])
 ipdb&gt; q
 </pre>
 </div>
@@ -1168,77 +1079,35 @@ ipdb&gt; q
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">BdbQuit</span>                                   Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-78-b4c959d91d81&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-53-b4c959d91d81&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      8</span>     start_time <span class="ansi-blue-fg">=</span> time<span class="ansi-blue-fg">.</span>time<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">      9</span> 
 <span class="ansi-green-fg">---&gt; 10</span><span class="ansi-red-fg">     </span>train_loss <span class="ansi-blue-fg">=</span> train<span class="ansi-blue-fg">(</span>model<span class="ansi-blue-fg">,</span> train_iterator<span class="ansi-blue-fg">,</span> optimizer<span class="ansi-blue-fg">,</span> criterion<span class="ansi-blue-fg">,</span> CLIP<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">     11</span>     valid_loss <span class="ansi-blue-fg">=</span> evaluate<span class="ansi-blue-fg">(</span>model<span class="ansi-blue-fg">,</span> valid_iterator<span class="ansi-blue-fg">,</span> criterion<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">     12</span> 
 
-<span class="ansi-green-fg">&lt;ipython-input-74-8d78b057d4f4&gt;</span> in <span class="ansi-cyan-fg">train</span><span class="ansi-blue-fg">(model, iterator, optimizer, criterion, clip)</span>
-<span class="ansi-green-intense-fg ansi-bold">     12</span>         optimizer<span class="ansi-blue-fg">.</span>zero_grad<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     13</span> 
-<span class="ansi-green-fg">---&gt; 14</span><span class="ansi-red-fg">         </span>output <span class="ansi-blue-fg">=</span> model<span class="ansi-blue-fg">(</span>src<span class="ansi-blue-fg">,</span> trg<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     15</span> 
-<span class="ansi-green-intense-fg ansi-bold">     16</span>         <span class="ansi-red-fg">#trg = [trg len, batch size]</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/my_env/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, *input, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    530</span>                 tracing_state<span class="ansi-blue-fg">.</span>push_scope<span class="ansi-blue-fg">(</span>name<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    531</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 532</span><span class="ansi-red-fg">                 </span>recording_scopes <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">False</span>
-<span class="ansi-green-intense-fg ansi-bold">    533</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    534</span>             result <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>forward<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>input<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-68-82ff7d929913&gt;</span> in <span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">(self, src, trg, teacher_forcing_ratio)</span>
-<span class="ansi-green-intense-fg ansi-bold">     32</span>             <span class="ansi-red-fg">#insert input token embedding, previous hidden state and all encoder hidden states</span>
-<span class="ansi-green-intense-fg ansi-bold">     33</span>             <span class="ansi-red-fg">#receive output tensor (predictions) and new hidden state</span>
-<span class="ansi-green-fg">---&gt; 34</span><span class="ansi-red-fg">             </span>output<span class="ansi-blue-fg">,</span> hidden <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>decoder<span class="ansi-blue-fg">(</span>input<span class="ansi-blue-fg">,</span> hidden<span class="ansi-blue-fg">,</span> encoder_outputs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     35</span> 
-<span class="ansi-green-intense-fg ansi-bold">     36</span>             <span class="ansi-red-fg">#place predictions in a tensor holding predictions for each token</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/my_env/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, *input, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    530</span>                 tracing_state<span class="ansi-blue-fg">.</span>push_scope<span class="ansi-blue-fg">(</span>name<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    531</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 532</span><span class="ansi-red-fg">                 </span>recording_scopes <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">False</span>
-<span class="ansi-green-intense-fg ansi-bold">    533</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    534</span>             result <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>forward<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>input<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-67-6a1fdeeb43f5&gt;</span> in <span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">(self, input, hidden, encoder_outputs)</span>
-<span class="ansi-green-intense-fg ansi-bold">     20</span>         <span class="ansi-red-fg">#encoder_outputs = [src len, batch size, enc hid dim * 2]</span>
-<span class="ansi-green-intense-fg ansi-bold">     21</span> 
-<span class="ansi-green-fg">---&gt; 22</span><span class="ansi-red-fg">         </span>input <span class="ansi-blue-fg">=</span> input<span class="ansi-blue-fg">.</span>unsqueeze<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     23</span> 
-<span class="ansi-green-intense-fg ansi-bold">     24</span>         <span class="ansi-red-fg">#input = [1, batch size]</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/my_env/lib/python3.7/site-packages/torch/nn/modules/module.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, *input, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    530</span>                 tracing_state<span class="ansi-blue-fg">.</span>push_scope<span class="ansi-blue-fg">(</span>name<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    531</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 532</span><span class="ansi-red-fg">                 </span>recording_scopes <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">False</span>
-<span class="ansi-green-intense-fg ansi-bold">    533</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    534</span>             result <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>forward<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>input<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-66-2ea731702c9b&gt;</span> in <span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">(self, hidden, encoder_outputs)</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span>         <span class="ansi-red-fg">#encoder_outputs = [src len, batch size, enc hid dim * 2]</span>
+<span class="ansi-green-fg">&lt;ipython-input-50-8fa94dfdf34f&gt;</span> in <span class="ansi-cyan-fg">train</span><span class="ansi-blue-fg">(model, iterator, optimizer, criterion, clip)</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span>         <span class="ansi-green-fg">import</span> pdb<span class="ansi-blue-fg">;</span>pdb<span class="ansi-blue-fg">.</span>set_trace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      9</span> 
+<span class="ansi-green-fg">---&gt; 10</span><span class="ansi-red-fg">         </span>src <span class="ansi-blue-fg">=</span> batch<span class="ansi-blue-fg">.</span>src
+<span class="ansi-green-intense-fg ansi-bold">     11</span>         trg <span class="ansi-blue-fg">=</span> batch<span class="ansi-blue-fg">.</span>trg
 <span class="ansi-green-intense-fg ansi-bold">     12</span> 
-<span class="ansi-green-fg">---&gt; 13</span><span class="ansi-red-fg">         </span>batch_size <span class="ansi-blue-fg">=</span> encoder_outputs<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">     14</span>         src_len <span class="ansi-blue-fg">=</span> encoder_outputs<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">     15</span> 
 
-<span class="ansi-green-fg">&lt;ipython-input-66-2ea731702c9b&gt;</span> in <span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">(self, hidden, encoder_outputs)</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span>         <span class="ansi-red-fg">#encoder_outputs = [src len, batch size, enc hid dim * 2]</span>
+<span class="ansi-green-fg">&lt;ipython-input-50-8fa94dfdf34f&gt;</span> in <span class="ansi-cyan-fg">train</span><span class="ansi-blue-fg">(model, iterator, optimizer, criterion, clip)</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span>         <span class="ansi-green-fg">import</span> pdb<span class="ansi-blue-fg">;</span>pdb<span class="ansi-blue-fg">.</span>set_trace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      9</span> 
+<span class="ansi-green-fg">---&gt; 10</span><span class="ansi-red-fg">         </span>src <span class="ansi-blue-fg">=</span> batch<span class="ansi-blue-fg">.</span>src
+<span class="ansi-green-intense-fg ansi-bold">     11</span>         trg <span class="ansi-blue-fg">=</span> batch<span class="ansi-blue-fg">.</span>trg
 <span class="ansi-green-intense-fg ansi-bold">     12</span> 
-<span class="ansi-green-fg">---&gt; 13</span><span class="ansi-red-fg">         </span>batch_size <span class="ansi-blue-fg">=</span> encoder_outputs<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">     14</span>         src_len <span class="ansi-blue-fg">=</span> encoder_outputs<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">     15</span> 
 
-<span class="ansi-green-fg">~/anaconda3/envs/my_env/lib/python3.7/bdb.py</span> in <span class="ansi-cyan-fg">trace_dispatch</span><span class="ansi-blue-fg">(self, frame, event, arg)</span>
+<span class="ansi-green-fg">~/anaconda3/lib/python3.8/bdb.py</span> in <span class="ansi-cyan-fg">trace_dispatch</span><span class="ansi-blue-fg">(self, frame, event, arg)</span>
 <span class="ansi-green-intense-fg ansi-bold">     86</span>             <span class="ansi-green-fg">return</span> <span class="ansi-red-fg"># None</span>
 <span class="ansi-green-intense-fg ansi-bold">     87</span>         <span class="ansi-green-fg">if</span> event <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;line&#39;</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-fg">---&gt; 88</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>dispatch_line<span class="ansi-blue-fg">(</span>frame<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">     89</span>         <span class="ansi-green-fg">if</span> event <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;call&#39;</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">     90</span>             <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>dispatch_call<span class="ansi-blue-fg">(</span>frame<span class="ansi-blue-fg">,</span> arg<span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">~/anaconda3/envs/my_env/lib/python3.7/bdb.py</span> in <span class="ansi-cyan-fg">dispatch_line</span><span class="ansi-blue-fg">(self, frame)</span>
+<span class="ansi-green-fg">~/anaconda3/lib/python3.8/bdb.py</span> in <span class="ansi-cyan-fg">dispatch_line</span><span class="ansi-blue-fg">(self, frame)</span>
 <span class="ansi-green-intense-fg ansi-bold">    111</span>         <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>stop_here<span class="ansi-blue-fg">(</span>frame<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">or</span> self<span class="ansi-blue-fg">.</span>break_here<span class="ansi-blue-fg">(</span>frame<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">    112</span>             self<span class="ansi-blue-fg">.</span>user_line<span class="ansi-blue-fg">(</span>frame<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-fg">--&gt; 113</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>quitting<span class="ansi-blue-fg">:</span> <span class="ansi-green-fg">raise</span> BdbQuit
