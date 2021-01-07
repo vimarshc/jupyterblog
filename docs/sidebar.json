@@ -2,6 +2,7 @@
     "Jupyter Blog": {
         "About Me": "/",
         "CV": "/assets/VimarshChaturvedi_CV.pdf",
+	"Youtube Channel": "https://www.youtube.com/channel/UCh510vJ4SkGUfx7_QxTUWhw",
 	"Few Experiments": "github.com/vimarshc/fastai_experiments/",
     "Important Deep Learning Resources": "important_deep_learning_resources.html",
      "Other Fun Things": "other_fun_things.html"

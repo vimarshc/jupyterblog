@@ -12,6 +12,9 @@ entries:
     - output: web,pdf
       title: CV
       url: /assets/VimarshChaturvedi_CV.pdf
+    - external_url: https://www.youtube.com/channel/UCh510vJ4SkGUfx7_QxTUWhw
+      output: web,pdf
+      title: Youtube Channel
     - output: web,pdf
       title: Few Experiments
       url: github.com/vimarshc/fastai_experiments/
