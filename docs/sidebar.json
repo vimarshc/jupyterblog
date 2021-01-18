@@ -2,18 +2,21 @@
     "Jupyter Blog": {
         "About Me": "/",
         "CV": "/assets/VimarshChaturvedi_CV.pdf",
-	"Youtube Channel": "https://www.youtube.com/channel/UCh510vJ4SkGUfx7_QxTUWhw",
-	"Few Experiments": "github.com/vimarshc/fastai_experiments/",
-    "Important Deep Learning Resources": "important_deep_learning_resources.html",
-     "Other Fun Things": "other_fun_things.html"
+        "Youtube Channel": "https://www.youtube.com/channel/UCh510vJ4SkGUfx7_QxTUWhw",
+        "Few Experiments": "github.com/vimarshc/fastai_experiments/",
+    "Important Deep Learning Resources": "important_deep_learning_resources.html"
     },
     "Attention": {
         "Post": "/attention.attention",
         "": {
             "Reference Papers": {
-    			"Align and Translate": "attention.align_and_translate.html",
-    			"Show, Attend and Tell": "attention.show_attend_tell.html"
+                        "Align and Translate": "attention.align_and_translate.html",
+                        "Show, Attend and Tell": "attention.show_attend_tell.html"
             }
         }
+    },
+    "Other Fun Things":{
+        "Economics Reading List": "economics_reading_list.html",
+        "Going to Mars": "going_to_mars.html"
     }
 }

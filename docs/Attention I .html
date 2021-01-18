@@ -253,22 +253,8 @@ nb_path: "Attention I .ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>tensor([[0.0068, 0.0087, 0.0099, 0.0084, 0.0070, 0.0063, 0.0093, 0.0092, 0.0091,
-         0.0069, 0.0091, 0.0067, 0.0067, 0.0070, 0.0070, 0.0059, 0.0082, 0.0076,
-         0.0056, 0.0045, 0.0047, 0.0079, 0.0074, 0.0046, 0.0057, 0.0089, 0.0066,
-         0.0061, 0.0060, 0.0097, 0.0066, 0.0068, 0.0055, 0.0088, 0.0051, 0.0070,
-         0.0076, 0.0077, 0.0074, 0.0080, 0.0099, 0.0052, 0.0047, 0.0064, 0.0086,
-         0.0074, 0.0065, 0.0056, 0.0081, 0.0063, 0.0071, 0.0072, 0.0086, 0.0070,
-         0.0049, 0.0054, 0.0074, 0.0086, 0.0067, 0.0056, 0.0055, 0.0086, 0.0065,
-         0.0062, 0.0075, 0.0088, 0.0056, 0.0062, 0.0092, 0.0079, 0.0083, 0.0073,
-         0.0072, 0.0073, 0.0084, 0.0065, 0.0058, 0.0061, 0.0086, 0.0074, 0.0072,
-         0.0074, 0.0111, 0.0054, 0.0060, 0.0077, 0.0067, 0.0079, 0.0091, 0.0062,
-         0.0048, 0.0053, 0.0063, 0.0089, 0.0066, 0.0067, 0.0090, 0.0047, 0.0075,
-         0.0081, 0.0074, 0.0092, 0.0086, 0.0070, 0.0078, 0.0058, 0.0071, 0.0051,
-         0.0064, 0.0060, 0.0087, 0.0080, 0.0074, 0.0065, 0.0062, 0.0062, 0.0061,
-         0.0067, 0.0068, 0.0078, 0.0078, 0.0070, 0.0055, 0.0083, 0.0084, 0.0071,
-         0.0080, 0.0070, 0.0057, 0.0072, 0.0076, 0.0058, 0.0074, 0.0100, 0.0068,
-         0.0049, 0.0054, 0.0112, 0.0100, 0.0058]], grad_fn=&lt;SoftmaxBackward&gt;)</pre>
+<pre>tensor([[0.0888, 0.1068, 0.0965, 0.1023, 0.0958, 0.0908, 0.0984, 0.1129, 0.1127,
+         0.0950]], grad_fn=&lt;SoftmaxBackward&gt;)</pre>
 </div>
 
 </div>
@@ -943,7 +929,7 @@ nb_path: "Attention I .ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>torch.Size([14, 1, 5])</pre>
+<pre>torch.Size([10, 1, 5])</pre>
 </div>
 
 </div>
@@ -1811,7 +1797,7 @@ nb_path: "Attention I .ipynb"
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">embeddify</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
     <span class="n">token_ids</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">text</span><span class="p">)[</span><span class="s1">&#39;input_ids&#39;</span><span class="p">]</span>
     <span class="n">_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">token_ids</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">embeddings</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">(</span><span class="n">text</span><span class="p">)[</span><span class="s2">&quot;input_ids&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">_len</span><span class="p">))),</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">convert_ids_to_tokens</span><span class="p">(</span><span class="n">token_ids</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">convert_ids_to_tokens</span><span class="p">(</span><span class="n">token_ids</span><span class="p">)</span>
     
 </pre></div>
 
@@ -2098,6 +2084,34 @@ nb_path: "Attention I .ipynb"
 
 </div>
 
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Self-Attention:-Definition">Self Attention: Definition<a class="anchor-link" href="#Self-Attention:-Definition"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">encoder_outputs_attention_softmax_weights</span><span class="p">,</span> <span class="n">energy</span>  <span class="o">=</span> <span class="n">attention</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="n">encoder_outputs</span><span class="p">)</span>
+
+<span class="c1"># bmm </span>
+<span class="n">context_vector</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">bmm</span><span class="p">(</span>
+    <span class="n">encoder_outputs_attention_softmax_weights</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+    <span class="n">encoder_outputs</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
