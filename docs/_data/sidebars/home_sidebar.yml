@@ -21,9 +21,6 @@ entries:
     - output: web,pdf
       title: Important Deep Learning Resources
       url: important_deep_learning_resources.html
-    - output: web,pdf
-      title: Other Fun Things
-      url: other_fun_things.html
     output: web
     title: Jupyter Blog
   - folderitems:
@@ -42,5 +39,14 @@ entries:
         title: Reference Papers
     output: web
     title: Attention
+  - folderitems:
+    - output: web,pdf
+      title: Economics Reading List
+      url: economics_reading_list.html
+    - output: web,pdf
+      title: Going to Mars
+      url: going_to_mars.html
+    output: web
+    title: Other Fun Things
   output: web
   title: Sidebar
